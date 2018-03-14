@@ -1,6 +1,8 @@
 import datetime
 import numpy as np
 import pandas as pd
+from functools import lru_cache
+
 from EasyPortfolioExplorer import names
 from EasyPortfolioExplorer.app.utils.market_data import MarketData
 
@@ -67,10 +69,11 @@ class RandomPortfolio:
         assert abs(array.sum() - 1) < 0.0001, 'array sum must be almost equal to 1.'
         self._weights = array
 
+    @lru_cache(maxsize=1024)
     def securities_close(self, start, end):
-        closes = RandomPortfolio.raw_data.loc[start:end:, self.tickers]
-        closes.columns = self.tickers
 
+        closes = RandomPortfolio.raw_data[start:end][self.tickers]
+        closes.columns = self.tickers
         return closes
 
     def securities_returns(self, start, end, resample=None):
