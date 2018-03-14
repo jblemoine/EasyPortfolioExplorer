@@ -7,7 +7,7 @@ import dash_table_experiments as dtex
 import pandas as pd
 import plotly.graph_objs as go
 
-from easy.portfolio import RandomPortfolio
+from EasyPortfolioExplorer.app.easy.portfolio import RandomPortfolio
 
 
 def portfolio_record(portfolio: RandomPortfolio):

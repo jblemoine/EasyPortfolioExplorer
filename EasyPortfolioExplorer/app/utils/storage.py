@@ -3,8 +3,8 @@ from datetime import date as dte
 import numpy as np
 import pandas as pd
 
-from EasyPortfolioExplorer.app import RandomPortfolio
-from EasyPortfolioExplorer.app import ResourceLoader
+from EasyPortfolioExplorer.app.easy.portfolio import RandomPortfolio
+from EasyPortfolioExplorer.app.utils.resource_loader import ResourceLoader
 
 
 def random_id():

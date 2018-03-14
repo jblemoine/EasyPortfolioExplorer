@@ -1,9 +1,8 @@
 import datetime
-
-import names
 import numpy as np
 import pandas as pd
 
+from EasyPortfolioExplorer import names
 from EasyPortfolioExplorer.app.utils.market_data import MarketData
 
 

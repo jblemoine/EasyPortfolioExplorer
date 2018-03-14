@@ -1,4 +1,4 @@
-from easy.base import EasyBase
+from EasyPortfolioExplorer.app.easy.base import EasyBase
 
 
 class ResourceLoader(EasyBase):

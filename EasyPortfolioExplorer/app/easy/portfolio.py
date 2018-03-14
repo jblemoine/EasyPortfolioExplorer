@@ -1,9 +1,8 @@
 import datetime
 import numpy as np
 import pandas as pd
-import names
-
-from utils.market_data import MarketData
+from EasyPortfolioExplorer import names
+from EasyPortfolioExplorer.app.utils.market_data import MarketData
 
 
 class RandomPortfolio:
@@ -29,9 +28,6 @@ class RandomPortfolio:
         self.creation_date = datetime.date(year=np.random.randint(2002, 2017), month=np.random.randint(1, 12),
                                            day=np.random.randint(1, 28))
         self.type = np.random.choice(RandomPortfolio.types)
-
-        self._start = None
-        self._end = None
 
     @classmethod
     def set_market_data(cls, market_data: MarketData):

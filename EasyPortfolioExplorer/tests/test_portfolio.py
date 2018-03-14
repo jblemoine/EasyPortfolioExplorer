@@ -32,14 +32,3 @@ def test_return(ptf):
     assert ptf.perf(start=return_param['start'], end=return_param['end']) == pytest.approx(true_perf, rel=1e-5)
 
 
-def test_cache(ptf):
-
-    call1 = ptf.securities_returns(start=return_param['start'], end=return_param['end'])
-    call2 = ptf.securities_returns(start=return_param['start'], end=return_param['end'])
-    assert id(call1) == id(call2)
-
-    call1 = ptf.ptf_histo_value(start=return_param['start'], end=return_param['end'])
-    call2 = ptf.ptf_histo_value(start=return_param['start'], end=return_param['end'])
-    assert id(call1) == id(call2)
-
-

@@ -4,7 +4,7 @@ import plotly.graph_objs as go
 from dash.dependencies import Output, Input, State
 
 from .layout import EasyLayout
-from utils.tab import portfolio_record, past_perf, user_coments, export_comment, risk_analysis
+from EasyPortfolioExplorer.app.utils.tab import portfolio_record, past_perf, user_coments, export_comment, risk_analysis
 
 
 class EasyCallbacks(EasyLayout):

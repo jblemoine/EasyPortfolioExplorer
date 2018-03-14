@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import date as dte
 
 from .portfolio import RandomPortfolio
-from utils.resource_loader import ResourceLoader
+from EasyPortfolioExplorer.app.utils.resource_loader import ResourceLoader
 
 
 def random_id():

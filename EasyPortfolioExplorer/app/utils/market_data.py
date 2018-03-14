@@ -7,7 +7,7 @@ from pandas.tseries.offsets import BDay
 from pandas_datareader import data as pdr
 from quandl.errors.quandl_error import LimitExceededError
 
-from static.major_indices import INDICES
+from EasyPortfolioExplorer.app.static.major_indices import INDICES
 
 
 class MarketData:
