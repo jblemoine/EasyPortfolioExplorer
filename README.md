@@ -10,7 +10,7 @@ Each point on the main scatter plot represents a portfolio.
 One can access additional information for each portfolio by first clicking on a single point and then navigating through the bottom tab. 
 
 
-![](raw/Gif.gif)
+![](EasyPortfolioExplorer/raw/Gif.gif)
 
 ## Installation
 
@@ -24,8 +24,8 @@ $ pip install git+https://github.com/jblemoine/EasyPortfolioExplorer
 
 Import dependencies
 ```python
-from app.easy.callbacks import EasyCallbacks
-from app.utils.market_data import MarketData
+from EasyPortfolioExplorer.app.easy.callbacks import EasyCallbacks
+from EasyPortfolioExplorer.app.utils.market_data import MarketData
 
 #Set market data, using a quandl api key.
 
