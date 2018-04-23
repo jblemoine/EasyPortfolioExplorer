@@ -17,15 +17,16 @@ One can access additional information for each portfolio by first clicking on a 
 
 ```sh
 $ pip install git+https://github.com/jblemoine/EasyPortfolioExplorer
+$ cd EasyPortfolioExplorer
+$ pip install -r requirements.txt
 ```
-
 
 ## Usage
 
 Import dependencies
 ```python
-from EasyPortfolioExplorer.app.easy.callbacks import EasyCallbacks
-from EasyPortfolioExplorer.app.utils.market_data import MarketData
+from EasyPortfolioExplorer import EasyCallbacks, MarketData
+
 
 #Set market data, using a quandl api key.
 

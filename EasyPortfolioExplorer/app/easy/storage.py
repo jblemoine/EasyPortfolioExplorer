@@ -11,13 +11,16 @@ def random_id():
 
 
 class Storage(ResourceLoader):
+    """
+        Singleton class. It serves as an intermediate storage facilities of portfolios information between callbacks.
+    Data is stored in a DataFrame.
+    """
 
-    def __init__(self, ptf_number: int, market_data, parallel=False, **kwargs):
+    def __init__(self, ptf_number: int, market_data, **kwargs):
         assert 1 < ptf_number < 2000, "ptf number must be between 1 and 2000."
         
         super().__init__(**kwargs)
         self.df = pd.DataFrame()
-        self.parallel = parallel
 
         RandomPortfolio.set_market_data(market_data)
         self.df['Portfolio'] = [RandomPortfolio(id=random_id()) for _ in range(ptf_number)]
@@ -30,6 +33,14 @@ class Storage(ResourceLoader):
         self.date_range = pd.date_range(start=market_data.date_min, end=dte.today(), freq='BAS')
 
     def _compute_returns(self, start, end):
+        """
+        Compute return over the period for every portfolio in the Storage DataFrame.
+        Store the result for the session in the Storage DataFrame.
+
+        :param start: start date
+        :param end: end date
+        :return: None
+        """
         try:
             self.df["Return_from_{0}_to_{1}".format(start, end)]
 
@@ -38,6 +49,14 @@ class Storage(ResourceLoader):
                 lambda x: x.perf(start, end))
 
     def _compute_variance(self, start, end):
+        """
+        Compute variance over the period for every portfolio in the Storage DataFrame.
+        Store the result for the session in the Storage DataFrame.
+
+        :param start:
+        :param end:
+        :return: None
+        """
         try:
             self.df["Variance_from_{0}_to_{1}".format(start, end)]
 

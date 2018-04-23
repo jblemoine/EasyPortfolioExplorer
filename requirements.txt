@@ -1,9 +1,10 @@
 dash-core-components>=0.17.0
 dash>=0.19.0
-dash-table-experiments==0.5.3
-dash-html-components==0.8.0
+dash-table-experiments>=0.5.3
+dash-html-components>=0.8.0
 plotly>=2.3.0
-pandas==0.22.0
+pandas>=0.22.0
 quandl>=3.3.0
-fix_yahoo_finance>==0.0.21
-pandas-datareader>=0.6.0
+fix_yahoo_finance>=0.0.21
+pandas_datareader>=0.6.0
+numpy

@@ -5,7 +5,7 @@ import pytest
 return_param = dict(
     start='20080101',
     end='20180101',
-    tickers=['AAPL', 'A', 'F', 'GS']
+    tickers=['AAPL', 'F']
 )
 
 

@@ -16,7 +16,7 @@ def portfolio_record(portfolio: RandomPortfolio):
     frame['Weight'] = (frame['Weight']*100).map(lambda x: "{0:.2f}%".format(x))
 
     return html.Div([
-        html.H1("Account n° {} - Portfolio records".format(portfolio.id), className='panel-heading'),
+        html.H1("Account n° {} - Portfolio composition".format(portfolio.id), className='panel-heading'),
         dtex.DataTable(
             rows=frame.to_dict('records'),
             filterable=True,

@@ -2,14 +2,18 @@ from EasyPortfolioExplorer.app.easy.base import EasyBase
 
 
 class ResourceLoader(EasyBase):
+    """
+    Class for adding external resources such as css and js file.
+    The current version is based on boostrap 3.3.7.
+
+    """
 
     def __init__(self, **kwargs):
         super(ResourceLoader, self).__init__(**kwargs)
 
         self._css_urls = [
+            'https://cdn.rawgit.com/jblemoine/EasyPortfolioExplorer/117125bb/EasyPortfolioExplorer/app/static/extra.css',
             'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-            'https://drive.google.com/uc?export=download&id=1WI1tctnEiLySSMkCQwaOObuZiF2UmLi2',
-
         ]
         self._js_urls = [
             'https://code.jquery.com/'

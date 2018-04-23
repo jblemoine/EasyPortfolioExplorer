@@ -1,7 +1,4 @@
-import datetime as dt
-
 import pandas as pd
-from pandas.tseries.offsets import BDay
 
 
 def test_data(mkt_data):
@@ -12,12 +9,12 @@ def test_data(mkt_data):
     assert not data.empty
     assert isinstance(data.index, pd.DatetimeIndex)
 
-    tickers_test = ['AAPL', 'A', 'MSFT']
+    tickers_test = ['AAPL', 'MSFT', 'F']
 
     for ticker in tickers_test:
         assert ticker in data.columns
 
-    assert data.index[-1] >= (dt.date.today() - BDay(5))
+    assert (data.index[-1] + pd.Timedelta(days=5)) >= pd.Timestamp(mkt_data.date_max)
 
 
 def test_indices_returns(mkt_data):
@@ -28,7 +25,7 @@ def test_indices_returns(mkt_data):
     assert not data.empty
     assert isinstance(data.index, pd.DatetimeIndex)
 
-    assert data.index[-1] >= (dt.date.today() - BDay(5))
+    assert (data.index[-1] + pd.Timedelta(days=5)) >= pd.Timestamp(mkt_data.date_max)
 
 
 

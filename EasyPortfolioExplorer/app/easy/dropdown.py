@@ -5,6 +5,10 @@ from .storage import Storage
 
 
 class EasyDropdown(dcc.Dropdown):
+    """
+    A custom dropdown element. All instances will communicate between each other and update their content automatically.
+
+    """
     _instances = []
 
     def __init__(self, data: DataFrame, label: str, id=None, **kwargs):
@@ -41,6 +45,10 @@ class EasyDropdown(dcc.Dropdown):
 
 
 class MultiEasyDropdown(Storage):
+    """
+    This class create the dropdown present in the app.
+
+    """
 
     def __init__(self, labels: list, **kwargs):
 
@@ -54,6 +62,13 @@ class MultiEasyDropdown(Storage):
         self.labels = labels
 
     def dropdowns(self, className=None, multi=True):
+        """
+        Create list of custom dropdowns.
+
+        :param className: Sets the class name of the element (the value of an element's html class attribute).
+        :param multi: If True, the user can select multiple values.
+        :return: list of dropdowns. The last element is hidden.
+        """
         if not self._dropdowns:
             self._dropdowns = [EasyDropdown(label=label, data=self.df, id=label, className=className, multi=multi)
                               for label in self.labels] + [EasyDropdown(label=self.labels[-1],

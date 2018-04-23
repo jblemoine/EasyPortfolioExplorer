@@ -6,6 +6,10 @@ from .dropdown import MultiEasyDropdown
 
 
 class EasyLayout(MultiEasyDropdown):
+    """
+    App layout. It describes what the application looks like.
+
+    """
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -13,6 +17,11 @@ class EasyLayout(MultiEasyDropdown):
         self.add_skeleton()
 
     def add_skeleton(self):
+        """
+
+        Skeleton for the app. It describes the main containers.
+        :return: None
+        """
         self.app.layout = html.Div([
             dcc.Location(id='url', refresh=False),  # not rendered
 
@@ -81,7 +90,7 @@ class EasyLayout(MultiEasyDropdown):
     def _links(className):
 
         buttons = [
-            dcc.Link('Portfolio record', href="/portfolio_record", className=className),
+            dcc.Link('Portfolio composition', href="/portfolio_record", className=className),
             dcc.Link('Past performance', href="/past_performance", className=className),
             dcc.Link('Latest transactions', href="/latest_transactions", className=className),
             dcc.Link('Risk Analysis', href="/risk_analysis", className=className),
