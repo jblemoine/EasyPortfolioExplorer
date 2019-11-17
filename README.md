@@ -16,14 +16,13 @@ One can access additional information for each portfolio by first clicking on a 
 
 
 ```sh
-$ pip install git+https://github.com/jblemoine/EasyPortfolioExplorer
+$ git clone git+https://github.com/jblemoine/EasyPortfolioExplorer
 $ cd EasyPortfolioExplorer
 $ pip install -r requirements.txt
 ```
 
 ## Usage
 
-Import dependencies
 ```python
 from EasyPortfolioExplorer import EasyCallbacks, MarketData
 
@@ -54,14 +53,13 @@ app = EasyCallbacks(
         # base url 
         url_base_pathname='/',
         
-        # 
+        # optional debug mode
         debug=True,
         
         # set the market data
         market_data=market_data,
         
         # set ptf number to display. Limited to 2000, due to performance issue.
-        
         ptf_number=1000,
         
         # data to be used in dropdowns. Must be either 'id', 'Fund_manager', 'Client_name', 'Type', 'Creation_date'
@@ -80,20 +78,9 @@ if __name__ == '__main__':
 $ pytest
 
 ```
-
-## Contributing
-
-1. Fork it (<https://github.com/jblemoine/EasyPortfolioExplorer/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
-
 ## Authors
 
  **Jean-Baptiste Lemoine**
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
